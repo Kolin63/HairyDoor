@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6q41kdnuk788"]
+
+[ext_resource type="Script" path="res://scenes/wiki_checker/wiki_checker.gd" id="1_utohi"]
+
+[node name="HTTPRequest" type="HTTPRequest"]
+script = ExtResource("1_utohi")

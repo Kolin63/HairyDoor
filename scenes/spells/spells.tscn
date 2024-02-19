@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://disskr61lrdjf"]
+
+[ext_resource type="Script" path="res://scenes/spells/spells.gd" id="1_kxb8l"]
+
+[node name="Spells" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxb8l")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.12037
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 600
+metadata/_edit_use_anchors_ = true
+
+[node name="List" type="Control" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="TopRow" type="HBoxContainer" parent="HSplitContainer/List"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+
+[node name="Search" type="LineEdit" parent="HSplitContainer/List/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search..."
+clear_button_enabled = true
+
+[node name="AddSpell" type="Button" parent="HSplitContainer/List/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Add Spell"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/List"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/List/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Label" type="Label" parent="HSplitContainer"]
+layout_mode = 2
+text = "hello
+"
+
+[connection signal="pressed" from="HSplitContainer/List/TopRow/AddSpell" to="." method="_on_add_spell_pressed"]

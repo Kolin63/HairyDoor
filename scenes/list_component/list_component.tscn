@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://n12o0beggfxk"]
+
+[ext_resource type="Script" path="res://scenes/list_component/list_component.gd" id="1_8t7nv"]
+[ext_resource type="Texture2D" uid="uid://bfeijt1m0ux4a" path="res://icon.svg" id="2_yh2qw"]
+[ext_resource type="FontFile" uid="uid://cpvoew2jmcalf" path="res://fonts/Playfair Display/PlayfairDisplay-SemiBold.ttf" id="3_803qi"]
+[ext_resource type="FontFile" uid="uid://hr72q1o6twp" path="res://fonts/Playfair Display/PlayfairDisplay-Regular.ttf" id="4_h227t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fka44"]
+font = ExtResource("3_803qi")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_831uc"]
+line_spacing = -2.5
+font = ExtResource("4_h227t")
+font_size = 25
+
+[node name="ListComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -516.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8t7nv")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("2_yh2qw")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = -6.0
+offset_right = 462.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("3_803qi")
+theme_override_font_sizes/font_size = 35
+text = "Name"
+label_settings = SubResource("LabelSettings_fka44")
+
+[node name="ShortDescription" type="Label" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 44.0
+offset_right = 397.0
+offset_bottom = 112.0
+text = "Short
+Description"
+label_settings = SubResource("LabelSettings_831uc")
