@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://do6oktd4ysdg5"]
+[gd_scene load_steps=7 format=3 uid="uid://do6oktd4ysdg5"]
 
 [ext_resource type="Script" path="res://scenes/add_spell/add_spell.gd" id="1_kasnp"]
 [ext_resource type="Script" path="res://scenes/add_spell/link_search.gd" id="2_m0sjs"]
+[ext_resource type="Texture2D" uid="uid://bfeijt1m0ux4a" path="res://icon.svg" id="3_65yv1"]
+[ext_resource type="Script" path="res://scenes/add_spell/edit_picture.gd" id="3_c13q1"]
 [ext_resource type="PackedScene" uid="uid://n12o0beggfxk" path="res://scenes/list_component/list_component.tscn" id="3_drykt"]
 [ext_resource type="Script" path="res://scenes/add_spell/preview.gd" id="3_i3rpo"]
 
@@ -13,62 +15,114 @@ transient = true
 exclusive = true
 script = ExtResource("1_kasnp")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 50.0
-offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="Control" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(22.8, 0)
 layout_mode = 2
 
-[node name="Search" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Offset" type="Control" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 19.08)
+layout_mode = 2
+
+[node name="Search" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 script = ExtResource("2_m0sjs")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Search"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer/Search"]
 layout_mode = 2
 
-[node name="SpellName" type="LineEdit" parent="ScrollContainer/VBoxContainer/Search/HBoxContainer"]
+[node name="SpellName" type="LineEdit" parent="HBoxContainer/ScrollContainer/VBoxContainer/Search/HBoxContainer"]
 layout_mode = 2
 placeholder_text = "Search for a spell..."
 expand_to_text_length = true
 clear_button_enabled = true
 
-[node name="CheckLinks" type="Button" parent="ScrollContainer/VBoxContainer/Search/HBoxContainer"]
+[node name="CheckLinks" type="Button" parent="HBoxContainer/ScrollContainer/VBoxContainer/Search/HBoxContainer"]
 layout_mode = 2
 text = "Check Links"
 
-[node name="APIStatus" type="Label" parent="ScrollContainer/VBoxContainer/Search"]
+[node name="APIStatus" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/Search"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Beyond: "
 
-[node name="BG3Status" type="Label" parent="ScrollContainer/VBoxContainer/Search"]
+[node name="BG3Status" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/Search"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "BG3 Wiki: "
 
-[node name="Preview" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="EditPicture" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_c13q1")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Edit Picture"
+
+[node name="Picture" type="Sprite2D" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture/HBoxContainer"]
+position = Vector2(256, 64)
+texture = ExtResource("3_65yv1")
+
+[node name="Instructions" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture"]
+layout_mode = 2
+text = "Select image Source:"
+
+[node name="SelectSource" type="OptionButton" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture"]
+layout_mode = 2
+size_flags_horizontal = 0
+item_count = 3
+selected = 0
+popup/item_0/text = "BG3 Wiki"
+popup/item_0/id = 0
+popup/item_1/text = "D&D Beyond"
+popup/item_1/id = 1
+popup/item_2/text = "Custom"
+popup/item_2/id = 2
+
+[node name="Filler" type="Control" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture"]
+custom_minimum_size = Vector2(0, 62.98)
+layout_mode = 2
+
+[node name="Preview" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 script = ExtResource("3_i3rpo")
 
-[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/Preview"]
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/ScrollContainer/VBoxContainer/Preview"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Preview"]
+[node name="Label" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/Preview"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "Preview"
 
-[node name="ListComponent" parent="ScrollContainer/VBoxContainer/Preview" instance=ExtResource("3_drykt")]
+[node name="ListComponent" parent="HBoxContainer/ScrollContainer/VBoxContainer/Preview" instance=ExtResource("3_drykt")]
 layout_mode = 2
 
-[connection signal="preview_api" from="ScrollContainer/VBoxContainer/Search" to="ScrollContainer/VBoxContainer/Preview" method="_on_search_preview_api"]
-[connection signal="preview_bg3" from="ScrollContainer/VBoxContainer/Search" to="ScrollContainer/VBoxContainer/Preview" method="_on_search_preview_bg3"]
+[connection signal="preview_api" from="HBoxContainer/ScrollContainer/VBoxContainer/Search" to="HBoxContainer/ScrollContainer/VBoxContainer/Preview" method="_on_search_preview_api"]
+[connection signal="preview_bg3" from="HBoxContainer/ScrollContainer/VBoxContainer/Search" to="HBoxContainer/ScrollContainer/VBoxContainer/Preview" method="_on_search_preview_bg3"]
+[connection signal="share_json" from="HBoxContainer/ScrollContainer/VBoxContainer/Preview" to="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture" method="_on_preview_share_json"]
+[connection signal="share_texture" from="HBoxContainer/ScrollContainer/VBoxContainer/Preview" to="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture" method="_on_preview_share_texture"]

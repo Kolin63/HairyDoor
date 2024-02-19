@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coxsgxbosvcnh"
-path="res://.godot/imported/300px-Fire_Bolt.webp.png-80d028d49c9c2ae626901f0441c27fe4.ctex"
+uid="uid://c0nrj7kvxv4f7"
+path="res://.godot/imported/necromancy.png-3501295ba633f3fc78a3f1ec99c02b28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imports/firebolt/300px-Fire_Bolt.webp.png"
-dest_files=["res://.godot/imported/300px-Fire_Bolt.webp.png-80d028d49c9c2ae626901f0441c27fe4.ctex"]
+source_file="res://imports/beyond_schools/necromancy.png"
+dest_files=["res://.godot/imported/necromancy.png-3501295ba633f3fc78a3f1ec99c02b28.ctex"]
 
 [params]
 

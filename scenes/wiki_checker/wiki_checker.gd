@@ -105,3 +105,14 @@ func extract_image(link):
 	
 	var texture = ImageTexture.create_from_image(image)
 	return texture
+
+
+func extract_json(link):
+	request(link)
+	await request_completed
+	
+	var json = JSON.new()
+	json.parse(request_body.get_string_from_utf8())
+	
+	return json.get_data()
+	

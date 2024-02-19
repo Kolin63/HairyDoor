@@ -7,3 +7,5 @@ res://scenes/wiki_checker/wiki_checker.gd
 res://scenes/list_component/list_component.gd
 res://scenes/add_spell/Preview.gd
 res://scenes/add_spell/preview.gd
+res://scenes/add_spell/edit_picture.gd
+res://scenes/spells/spells.gd

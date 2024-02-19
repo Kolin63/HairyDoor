@@ -3,7 +3,7 @@ extends Control
 var add_spell_popup = preload("res://scenes/add_spell/add_spell.tscn")
 
 var list_component = preload("res://scenes/list_component/list_component.tscn")
-var firebolt_image = preload("res://imports/firebolt/300px-Fire_Bolt.webp.png")
+var firebolt_image = preload("res://icon.svg")
 
 
 func _ready():

@@ -41,7 +41,7 @@ clear_button_enabled = true
 [node name="AddSpell" type="Button" parent="HSplitContainer/List/TopRow"]
 layout_mode = 2
 size_flags_horizontal = 8
-text = "Add Spell"
+text = "Add a Spell"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/List"]
 layout_mode = 1

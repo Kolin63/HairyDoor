@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708358188
+::res://::1708378207
 icon.svg::CompressedTexture2D::2746125259674792550::1708297267::1708297270::1::::<><>::
 ::res://fonts/::1708297613
 ::res://fonts/Playfair Display/::1708297635
@@ -15,21 +15,29 @@ PlayfairDisplay-MediumItalic.ttf::FontFile::2689481962413795234::1708219161::170
 PlayfairDisplay-Regular.ttf::FontFile::15541422609000415::1708219160::1708297635::1::::<><>::
 PlayfairDisplay-SemiBold.ttf::FontFile::5869884333514749483::1708219161::1708297635::1::::<><>::
 PlayfairDisplay-SemiBoldItalic.ttf::FontFile::3792822218542065498::1708219160::1708297635::1::::<><>::
-::res://imports/::1708299382
-::res://imports/firebolt/::1708299449
-300px-Fire_Bolt.webp.png::CompressedTexture2D::5804070697538091921::1708299432::1708299449::1::::<><>::
+::res://imports/::1708381651
+::res://imports/beyond_schools/::1708381810
+abjuration.png::CompressedTexture2D::2487114355626499951::1708381782::1708381814::1::::<><>::
+conjuration.png::CompressedTexture2D::5658462042291267177::1708381789::1708381814::1::::<><>::
+divination.png::CompressedTexture2D::4676529113499607564::1708381799::1708381814::1::::<><>::
+enchantment.png::CompressedTexture2D::5636578547605978892::1708381796::1708381814::1::::<><>::
+evocation.png::CompressedTexture2D::4264672372807911849::1708381785::1708381814::1::::<><>::
+illusion.png::CompressedTexture2D::1187722081565903055::1708381803::1708381814::1::::<><>::
+necromancy.png::CompressedTexture2D::6555449327342950262::1708381778::1708381814::1::::<><>::
+transmutation.png::CompressedTexture2D::7335665835197719019::1708381792::1708381814::1::::<><>::
 ::res://scenes/::1708320319
-::res://scenes/add_spell/::1708362472
+::res://scenes/add_spell/::1708381610
 add_spell.gd::GDScript::-1::1708319362::0::1::::<>Window<>::
-add_spell.tscn::PackedScene::8206770472153865574::1708362709::0::1::::<><>::res://scenes/add_spell/add_spell.gd<>res://scenes/add_spell/link_search.gd<>res://scenes/add_spell/Preview.gd<>uid://n12o0beggfxk::::res://scenes/list_component/list_component.tscn
-link_search.gd::GDScript::-1::1708362226::0::1::::<>VBoxContainer<>::
-Preview.gd::GDScript::-1::1708362709::0::1::::<>VBoxContainer<>::
-::res://scenes/list_component/::1708362472
+add_spell.tscn::PackedScene::8206770472153865574::1708381610::0::1::::<><>::res://scenes/add_spell/add_spell.gd<>res://scenes/add_spell/link_search.gd<>uid://bfeijt1m0ux4a::::res://icon.svg<>res://scenes/add_spell/edit_picture.gd<>uid://n12o0beggfxk::::res://scenes/list_component/list_component.tscn<>res://scenes/add_spell/preview.gd
+link_search.gd::GDScript::-1::1708381325::0::1::::<>VBoxContainer<>::
+preview.gd::GDScript::-1::1708381325::0::1::::<>VBoxContainer<>::
+edit_picture.gd::GDScript::-1::1708381610::0::1::::<>VBoxContainer<>::
+::res://scenes/list_component/::1708381610
 list_component.gd::GDScript::-1::1708362226::0::1::::<>Control<>::
-list_component.tscn::PackedScene::967794463637898364::1708362472::0::1::::<><>::res://scenes/list_component/list_component.gd<>uid://bfeijt1m0ux4a::::res://icon.svg<>uid://cpvoew2jmcalf::::res://fonts/Playfair Display/PlayfairDisplay-SemiBold.ttf<>uid://hr72q1o6twp::::res://fonts/Playfair Display/PlayfairDisplay-Regular.ttf
-::res://scenes/spells/::1708362472
+list_component.tscn::PackedScene::967794463637898364::1708381610::0::1::::<><>::res://scenes/list_component/list_component.gd<>uid://bfeijt1m0ux4a::::res://icon.svg<>uid://cpvoew2jmcalf::::res://fonts/Playfair Display/PlayfairDisplay-SemiBold.ttf<>uid://hr72q1o6twp::::res://fonts/Playfair Display/PlayfairDisplay-Regular.ttf
+::res://scenes/spells/::1708381610
 spells.gd::GDScript::-1::1708320164::0::1::::<>Control<>::
-spells.tscn::PackedScene::7759043305548065531::1708362472::0::1::::<><>::res://scenes/spells/spells.gd
-::res://scenes/wiki_checker/::1708362472
-wiki_checker.gd::GDScript::-1::1708362472::0::1::::<>HTTPRequest<>::
-wiki_checker.tscn::PackedScene::6983533318147650291::1708362472::0::1::::<><>::res://scenes/wiki_checker/wiki_checker.gd
+spells.tscn::PackedScene::7759043305548065531::1708381610::0::1::::<><>::res://scenes/spells/spells.gd
+::res://scenes/wiki_checker/::1708381610
+wiki_checker.gd::GDScript::-1::1708366475::0::1::::<>HTTPRequest<>::
+wiki_checker.tscn::PackedScene::6983533318147650291::1708381610::0::1::::<><>::res://scenes/wiki_checker/wiki_checker.gd

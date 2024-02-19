@@ -28,8 +28,6 @@ func _ready():
 	
 	api_status.set("theme_override_colors/font_color", white)
 	bg3_status.set("theme_override_colors/font_color", white)
-	
-	#fix_bg3_links("https://www.bg3.wiki/wiki/Armor")
 
 
 func _on_text_changed(new_text):
@@ -95,6 +93,8 @@ func fix_bg3_links(bl):
 		if check_for_word(bl, "Hunters", i):
 			if bl.length() >= i+6:
 				bl = bl.insert(i+5, "'")
+		if check_for_word(bl, "With_", i):
+			bl[i - 1] = "w"
 	return bl
 
 
