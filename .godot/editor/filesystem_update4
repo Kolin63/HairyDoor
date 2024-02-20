@@ -9,3 +9,5 @@ res://scenes/add_spell/Preview.gd
 res://scenes/add_spell/preview.gd
 res://scenes/add_spell/edit_picture.gd
 res://scenes/spells/spells.gd
+res://scenes/add_spell/edit_info.gd
+res://scenes/add_spell/edit_info_element.gd

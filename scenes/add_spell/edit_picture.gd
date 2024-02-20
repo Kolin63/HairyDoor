@@ -26,7 +26,6 @@ func _on_preview_share_texture(bg3_texture_shared):
 func _on_preview_share_json(json_shared):
 	var json = json_shared
 	school = json["school"]["index"]
-	print(school)
 
 
 func _on_item_selected(index):
@@ -35,7 +34,6 @@ func _on_item_selected(index):
 
 
 func update_picture():
-	var logo = $HBoxContainer/Picture.texture
 	if selected_index == 0:
 		$HBoxContainer/Picture.texture = bg3_texture
 	elif selected_index == 1:

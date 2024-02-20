@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://do6oktd4ysdg5"]
+[gd_scene load_steps=8 format=3 uid="uid://do6oktd4ysdg5"]
 
 [ext_resource type="Script" path="res://scenes/add_spell/add_spell.gd" id="1_kasnp"]
 [ext_resource type="Script" path="res://scenes/add_spell/link_search.gd" id="2_m0sjs"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://scenes/add_spell/edit_picture.gd" id="3_c13q1"]
 [ext_resource type="PackedScene" uid="uid://n12o0beggfxk" path="res://scenes/list_component/list_component.tscn" id="3_drykt"]
 [ext_resource type="Script" path="res://scenes/add_spell/preview.gd" id="3_i3rpo"]
+[ext_resource type="Script" path="res://scenes/add_spell/edit_info.gd" id="5_6fkil"]
 
 [node name="AddSpell" type="Window"]
 title = "Add a Spell"
 initial_position = 4
-size = Vector2i(805, 530)
+size = Vector2i(805, 780)
 transient = true
 exclusive = true
 script = ExtResource("1_kasnp")
@@ -28,8 +29,10 @@ custom_minimum_size = Vector2(22.8, 0)
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+clip_contents = false
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
+vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
 layout_direction = 2
@@ -37,7 +40,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 
 [node name="Offset" type="Control" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 19.08)
+custom_minimum_size = Vector2(0, 45.945)
 layout_mode = 2
 
 [node name="Search" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
@@ -106,6 +109,45 @@ popup/item_2/id = 2
 [node name="Filler" type="Control" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditPicture"]
 custom_minimum_size = Vector2(0, 62.98)
 layout_mode = 2
+
+[node name="EditInfo" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("5_6fkil")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Edit Info"
+
+[node name="EditName" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo"]
+layout_mode = 2
+
+[node name="Instructions" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo/EditName"]
+layout_mode = 2
+text = "Edit Name"
+
+[node name="EditName" type="LineEdit" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo/EditName"]
+layout_mode = 2
+placeholder_text = "Name"
+expand_to_text_length = true
+
+[node name="EditShortDescription" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo/EditShortDescription"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Edit Short Description"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo/EditShortDescription"]
+layout_mode = 2
+
+[node name="AddElement" type="Button" parent="HBoxContainer/ScrollContainer/VBoxContainer/EditInfo/EditShortDescription/VBoxContainer"]
+layout_mode = 2
+text = "Add Element"
 
 [node name="Preview" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
